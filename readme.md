@@ -2,7 +2,7 @@
 Super simple PostIt Note like app, to quikly write what on your mind.
 
 ## Render: ⚡
-https://qvik.onrender.com
+[[[https://qvik.onrender.com](https://kvik.onrender.com/)](https://kvik.onrender.com/)](https://kvik.onrender.com/)
 
 ## Fazes: Functions too implemnts 🐌
 **Faze #1: Mains**
