@@ -16,29 +16,7 @@ USER_API.get('/', (req, res, next) => {
     SuperLogger.log("An important msg", SuperLogger.LOGGING_LEVELS.CRITICAL);
 });
 
-USER_API.put('/:id', async (req, res) => {
-    const userId = req.params.id;
-    const { name, email, password } = req.body;
 
-    if (name && email && password) {
-        try {
-            const userToUpdate = new User();
-            userToUpdate.id = userId;
-            userToUpdate.name = name;
-            userToUpdate.email = email;
-            userToUpdate.pswHash = password; 
-
-            const updatedUser = await userToUpdate.save();
-
-            res.status(HTTPCodes.SuccesfullRespons.Ok).json({ message: 'User updated successfully', user: updatedUser });
-        } catch (error) {
-            console.error('Error updating user:', error);
-            res.status(HTTPCodes.ServerErrorRespons.InternalServerError).json({ error: 'Internal Server Error' });
-        }
-    } else {
-        res.status(HTTPCodes.ClientSideErrorRespons.BadRequest).json({ error: 'Bad Request', message: 'Missing data fields' });
-    }
-});
 
 USER_API.post('/', async (req, res, next) => {
     const { name, email, password } = req.body;
